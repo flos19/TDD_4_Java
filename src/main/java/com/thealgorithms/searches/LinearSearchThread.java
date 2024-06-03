@@ -32,6 +32,8 @@ public final class LinearSearchThread {
             t2.join();
             t3.join();
         } catch (InterruptedException e) {
+            Thread.currentThread().interrupt(); // Wiederherstellen des Unterbrechungsstatus
+            System.err.println("Interrupted while waiting for threads to finish.");
         }
         boolean found = t.getResult() || t1.getResult() || t2.getResult() || t3.getResult();
         System.out.println("Found = " + found);

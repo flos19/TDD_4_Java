@@ -37,12 +37,10 @@ public class MiniMaxAlgorithm {
 
         bestScore = miniMaxAlgorith.miniMax(0, isMaximizer, 0, verbose);
 
-        if (verbose) {
-            System.out.println();
-        }
+        System.out.println();
 
         System.out.println(Arrays.toString(miniMaxAlgorith.getScores()));
-        System.out.println("The best score for " + (isMaximizer ? "Maximizer" : "Minimizer") + " is " + bestScore);
+        System.out.println("The best score for " + "Maximizer" + " is " + bestScore);
     }
 
     /**

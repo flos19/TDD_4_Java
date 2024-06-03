@@ -1,6 +1,7 @@
 package com.thealgorithms.others;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -145,7 +146,7 @@ public class CRCAlgorithm {
             }
             if (x.size() == p.size()) {
                 for (int i = 0; i < p.size(); i++) {
-                    if (x.get(i) == p.get(i)) {
+                    if (Objects.equals(x.get(i), p.get(i))) {
                         x.set(i, 0);
                     } else {
                         x.set(i, 1);
@@ -182,9 +183,6 @@ public class CRCAlgorithm {
     public void changeMess() {
         for (int y : message) {
             double x = randomGenerator.nextDouble();
-            while (x < 0.0000 || x > 1.00000) {
-                x = randomGenerator.nextDouble();
-            }
             if (x < ber) {
                 messageChanged = true;
                 if (y == 1) {

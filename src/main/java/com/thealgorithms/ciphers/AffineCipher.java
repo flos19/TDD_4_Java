@@ -10,19 +10,19 @@ final class AffineCipher {
 
     static String encryptMessage(char[] msg) {
         /// Cipher Text initially empty
-        String cipher = "";
+        StringBuilder cipher = new StringBuilder();
         for (int i = 0; i < msg.length; i++) {
             // Avoid space to be encrypted
             /* applying encryption formula ( a x + b ) mod m
             {here x is msg[i] and m is 26} and added 'A' to
             bring it in range of ascii alphabet[ 65-90 | A-Z ] */
             if (msg[i] != ' ') {
-                cipher = cipher + (char) ((((a * (msg[i] - 'A')) + b) % 26) + 'A');
+                cipher.append((char) ((((a * (msg[i] - 'A')) + b) % 26) + 'A'));
             } else { // else simply append space character
-                cipher += msg[i];
+                cipher.append(msg[i]);
             }
         }
-        return cipher;
+        return cipher.toString();
     }
 
     static String decryptCipher(String cipher) {

@@ -33,8 +33,11 @@ public final class VampireNumber {
                 // System.out.println(i+ " "+ j);
                 if (isVampireNumber(i, j, true)) {
                     countofRes++;
-                    res.append("" + countofRes + ": = ( " + i + "," + j + " = " + i * j + ")"
-                        + "\n");
+                    String countString = String.valueOf(countofRes);
+                    String iString = String.valueOf(i);
+                    String jString = String.valueOf(j);
+                    String productString = String.valueOf(i * j);
+                    res.append(countString).append(": = ( ").append(iString).append(",").append(jString).append(" = ").append(productString).append(")\n");
                 }
             }
         }

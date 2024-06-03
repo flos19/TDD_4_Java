@@ -11,8 +11,13 @@ public class CircleSort implements SortAlgorithm {
         if (n == 0) {
             return array;
         }
-        while (doSort(array, 0, n - 1)) {
-        }
+
+        boolean swapped;
+        do {
+            // In jeder Iteration wird das Array erneut sortiert
+            swapped = doSort(array, 0, n - 1);
+        } while (swapped);
+
         return array;
     }
 
